@@ -33,6 +33,10 @@ mkdocs-with-pdf = "^0.9.3"
 mkdocs-terminal = "^4.6.0"
 mkdocs-material = "^9.5.44"
 
+
+[tool.poetry.group.airflow.dependencies]
+apache-airflow = "^2.10.3"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
