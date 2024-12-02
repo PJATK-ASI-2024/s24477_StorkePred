@@ -37,6 +37,7 @@ mkdocs-material = "^9.5.44"
 [tool.poetry.group.airflow.dependencies]
 apache-airflow = "^2.10.3"
 gspread = "^6.1.4"
+pymsteams = "^0.2.3"
 
 [build-system]
 requires = ["poetry-core"]

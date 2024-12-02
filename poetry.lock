@@ -5880,6 +5880,22 @@ pyyaml = "*"
 extra = ["pygments (>=2.12)"]
 
 [[package]]
+name = "pymsteams"
+version = "0.2.3"
+description = "Format messages and post to Microsoft Teams."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "pymsteams-0.2.3.tar.gz", hash = "sha256:c0e59dd42708128cd8a9dc0b091b273683c586aa5668cb3a0e62146f9525e61b"},
+]
+
+[package.dependencies]
+requests = ">=2.20.0"
+
+[package.extras]
+async = ["httpx (>=0.18.2)"]
+
+[[package]]
 name = "pyod"
 version = "2.0.2"
 description = "A Comprehensive and Scalable Python Library for Outlier Detection (Anomaly Detection)"
@@ -8392,4 +8408,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.10"
-content-hash = "b3fa4e53fd2c7fcce6a0f7208fdf8802f9a04c2b31671e765ee3c7f59f5795a6"
+content-hash = "806bf61c11103da3454ba386541e4ec2bdc4bbad8c2803a221704a0615ad4944"
