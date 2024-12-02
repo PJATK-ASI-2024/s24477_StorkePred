@@ -77,7 +77,7 @@ def create_model_dag():
     @task()
     def monitor_model(model_comparison: pd.DataFrame):
         # check model accuracy, check first row
-        best_model = model_comparison.head(1)
+        best_model = model_comparison.head(1).to_dict(orient="records")[0]
         if best_model["Accuracy"] > 0.8:
             print("Model accuracy is greater than 0.8")
         else:

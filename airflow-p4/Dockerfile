@@ -11,3 +11,5 @@ USER airflow
 RUN pip install --no-cache-dir --upgrade pip
 
 RUN pip install pandas kagglehub pycaret "kaleido==0.2.1" "matplotlib<3.8.0" "imbalanced-learn==0.12.4" apache-airflow pymsteams
+
+RUN chmod 777 -R /home/airflow
