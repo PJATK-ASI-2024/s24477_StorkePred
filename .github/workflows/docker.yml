@@ -35,8 +35,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: s24477/strokepred:notebook
-          target: jupyter
+          tags: s24477/strokepred:latest
+          target: api
           context: .
           cache-from: type=gha
           cache-to: type=gha,mode=max
