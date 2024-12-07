@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "3.11.10"
@@ -38,6 +39,10 @@ mkdocs-material = "^9.5.44"
 apache-airflow = "^2.10.3"
 gspread = "^6.1.4"
 pymsteams = "^0.2.3"
+
+
+[tool.poetry.group.api.dependencies]
+fastapi = {extras = ["standard"], version = "^0.115.6"}
 
 [build-system]
 requires = ["poetry-core"]
