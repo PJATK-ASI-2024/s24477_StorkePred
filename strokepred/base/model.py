@@ -1,6 +1,6 @@
 from pycaret.classification import setup
 
-from strokepred.dataset import create_train_dataset, RANDOM_STATE
+from strokepred.base.dataset import create_train_dataset, RANDOM_STATE
 
 (df_train, df_test) = create_train_dataset()
 
@@ -18,4 +18,4 @@ strokepred_model = s.create_model("rf", verbose=False)
 if __name__ == "__main__":
     print(strokepred_model)
     (_, path) = s.save_model(strokepred_model, "strokepred_model")
-    print(f'Save model to {path}')
+    print(f"Save model to {path}")

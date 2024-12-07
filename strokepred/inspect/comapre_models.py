@@ -1,6 +1,6 @@
 from pycaret.classification import setup
 
-from .dataset import create_train_dataset, RANDOM_STATE
+from strokrepred.base.dataset import create_train_dataset, RANDOM_STATE
 
 (df_train, df_test) = create_train_dataset()
 
@@ -18,7 +18,6 @@ best_models = s.compare_models(
     # exclude=["rbfsvm", "gpc", "mlp", "et", "lda", "gbc"]
     # Choosing lightweight models
     include=[
-        "catboost",
         "lr",
         "knn",
         "nb",

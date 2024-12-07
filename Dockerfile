@@ -21,9 +21,9 @@ ENV PYTHONPATH="/app:${PYTHONPATH}"
 
 RUN poetry install --only main
 
-COPY strokepred/model.py strokepred/dataset.py /app/strokepred/
+COPY strokepred/base/ /app/strokepred/base/
 
-RUN poetry run python3 strokepred/model.py
+RUN poetry run python3 strokepred/base/model.py
 
 FROM base AS jupyter
 
@@ -37,6 +37,6 @@ FROM base AS api
 
 RUN poetry install --only main,api
 
-COPY strokepred/api.py /app/strokepred/
+COPY strokepred/api/ /app/strokepred/api/
 
-CMD ["poetry", "run", "fastapi", "run", "strokepred/api.py", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["poetry", "run", "fastapi", "run", "strokepred/api/app.py", "--host", "0.0.0.0", "--port", "5000"]

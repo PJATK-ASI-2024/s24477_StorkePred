@@ -2,8 +2,8 @@ import pandas as pd
 from fastapi import FastAPI
 from pycaret.classification import load_model, setup
 
-from strokepred.api_models import StrokepredInputs, StrokepredPredictions
-from strokepred.dataset import RANDOM_STATE, create_dataset, create_train_dataset
+from strokepred.api.models import StrokepredInputs, StrokepredPredictions
+from strokepred.base.dataset import RANDOM_STATE, create_dataset, create_train_dataset
 
 app = FastAPI()
 

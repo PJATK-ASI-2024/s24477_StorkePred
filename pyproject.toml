@@ -13,7 +13,6 @@ kagglehub = "^0.3.3"
 pycaret = "^3.3.2"
 kaleido = "0.2.1"
 matplotlib = "<3.8.0"
-catboost = "^1.2.7"
 imbalanced-learn = "^0.12.4"
 
 
