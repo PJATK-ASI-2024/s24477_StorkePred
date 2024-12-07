@@ -1,4 +1,6 @@
-FROM python:3.11.10 AS base
+FROM python:3.11.10-slim AS base
+
+RUN apt update && apt install -y libgomp1
 
 ENV USER=app-strokepred
 
@@ -15,9 +17,13 @@ WORKDIR /app
 
 COPY poetry.lock pyproject.toml /app/
 
-RUN poetry install
+ENV PYTHONPATH="/app:${PYTHONPATH}"
 
-COPY strokepred /app/strokepred
+RUN poetry install --only main
+
+COPY strokepred/model.py strokepred/dataset.py /app/strokepred/
+
+RUN poetry run python3 strokepred/model.py
 
 FROM base AS jupyter
 
@@ -26,3 +32,11 @@ RUN poetry install --with notebook
 COPY eda.ipynb strokrepred.ipynb /app/
 
 CMD ["poetry", "run", "jupyter", "notebook", "--ip=0.0.0.0"]
+
+FROM base AS api
+
+RUN poetry install --only main,api
+
+COPY strokepred/api.py /app/strokepred/
+
+CMD ["poetry", "run", "fastapi", "run", "strokepred/api.py", "--host", "0.0.0.0", "--port", "5000"]

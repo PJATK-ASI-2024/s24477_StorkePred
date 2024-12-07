@@ -1,9 +1,9 @@
 services:
-  notebook:
+  api:
     build:
       context: .
       dockerfile: Dockerfile
-      target: jupyter
-    image: s24477/strokepred:notebook
+      target: api
+    image: s24477/strokepred:latest
     ports:
-      - 8888:8888
+      - 5000:5000
