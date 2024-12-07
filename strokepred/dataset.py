@@ -21,7 +21,29 @@ def sanitize_dataset(df: pd.DataFrame):
 
     # Remove "Other"
     df = df[df["gender"] != "Other"]
+    # set type as category
+    df["gender"] = pd.Categorical(df["gender"], categories=df["gender"].unique())
+    # print(df['gender'].unique())
     # df["gender"] = df["gender"].isin(["Male", "Female"])
+
+    df["work_type"] = pd.Categorical(
+        df["work_type"], categories=df["work_type"].unique()
+    )
+    # print(df['work_type'].unique())
+
+
+    # rename Residence_type to residence_type
+    df = df.rename(columns={"Residence_type": "residence_type"})
+
+    df["residence_type"] = pd.Categorical(
+        df["residence_type"], categories=df["residence_type"].unique()
+    )
+    # print(df['residence_type'].unique())
+
+    df["smoking_status"] = pd.Categorical(
+        df["smoking_status"], categories=df["smoking_status"].unique()
+    )
+    # print(df['smoking_status'].unique())
 
     # Remove bmi outliers
     df = df[df["bmi"] < 65]
