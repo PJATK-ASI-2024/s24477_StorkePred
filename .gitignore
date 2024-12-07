@@ -164,3 +164,4 @@ cython_debug/
 # Project
 healthcare-dataset-stroke-data.csv
 catboost_info/
+strokepred_model.pkl
