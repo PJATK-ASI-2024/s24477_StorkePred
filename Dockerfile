@@ -39,4 +39,6 @@ RUN poetry install --only main,api
 
 COPY strokepred/api/ /app/strokepred/api/
 
+EXPOSE 5000
+
 CMD ["poetry", "run", "fastapi", "run", "strokepred/api/app.py", "--host", "0.0.0.0", "--port", "5000"]
