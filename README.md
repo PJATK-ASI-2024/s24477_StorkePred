@@ -49,3 +49,45 @@ W projekcie dążyć będę do spełnienia dwóch następujących celów:
 
 - Identyfikacja kluczowych czynników ryzyka - analiza i określenie najważniejszych zmiennych wpływających na zwiększone ryzyko udaru.
 - Stworzenie skutecznego modelu predykcyjnego ryzyka udaru mózgu - opracowanie modelu uczenia maszynowego, który na podstawie danych medycznych i demograficznych przewiduje wystąpienie udaru mózgu.
+
+## Adonotacje - Projekt 6
+
+### Uruchamianie aplikacji
+
+> [!TIP]
+>
+> Aplikacja jest dostępna publicznie pod adresem [`https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net`](https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net/docs)
+
+> [!NOTE]
+>
+> Obraz jest dostępny publicznie w Docker Hub [`s24477/strokepred`](https://hub.docker.com/r/s24477/strokepred)
+> *wykorzystano pipeline z poprzednich labów*
+
+```sh
+docker run -p 5000:5000 s24477/strokepred
+```
+
+lub
+
+```sh
+git clone https://github.com/PJATK-ASI-2024/24477_StorkePred strokepred
+cd strokepred
+docker compose up --build
+```
+
+### Testowanie API
+
+#### Swagger
+
+http://127.0.0.1:5000/docs
+
+*lub https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net/docs*
+
+#### shell
+
+```sh
+# export PROJECT_URL='https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net'
+# export PROJECT_URL='http://127.0.0.1:8000'
+export PROJECT_URL='https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net'
+curl ${PROJECT_URL}'/sample?count=3' | curl -X POST -H 'Content-Type: application/json' --data-binary @- ${PROJECT_URL}'/predict' | jq
+```
