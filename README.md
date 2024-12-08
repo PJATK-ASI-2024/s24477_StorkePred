@@ -64,7 +64,7 @@ W projekcie dążyć będę do spełnienia dwóch następujących celów:
 > *wykorzystano pipeline z poprzednich labów*
 
 ```sh
-docker run -p 5000:5000 s24477/strokepred
+docker run -p 5000:5000 s24477/strokepred:latest
 ```
 
 lub
@@ -86,7 +86,6 @@ http://127.0.0.1:5000/docs
 #### shell
 
 ```sh
-# export PROJECT_URL='https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net'
 # export PROJECT_URL='http://127.0.0.1:8000'
 export PROJECT_URL='https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net'
 curl ${PROJECT_URL}'/sample?count=3' | curl -X POST -H 'Content-Type: application/json' --data-binary @- ${PROJECT_URL}'/predict' | jq
