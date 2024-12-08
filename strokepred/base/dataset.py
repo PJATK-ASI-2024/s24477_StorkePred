@@ -60,6 +60,9 @@ def sanitize_dataset(df: pd.DataFrame):
     # Remap stroke into boolean values
     df["stroke"] = df["stroke"] == 1
 
+    # Ensure age is an integer
+    df['age'] = df['age'].astype(int)
+
     return df
 
 
