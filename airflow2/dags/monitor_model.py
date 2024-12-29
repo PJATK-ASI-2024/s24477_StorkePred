@@ -37,7 +37,9 @@ def monitor_model():
         predictions = model.predict(evaluation_data)
 
         # calculate accuracy
-        accuracy = (predictions == evaluation_data["prediction_label"]).mean()
+        accuracy = (
+            predictions["stroke"] == predictions["prediction_label"]
+        ).count() / len(evaluation_data)
 
         return accuracy
 
