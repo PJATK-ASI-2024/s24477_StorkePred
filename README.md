@@ -50,7 +50,7 @@ W projekcie dążyć będę do spełnienia dwóch następujących celów:
 - Identyfikacja kluczowych czynników ryzyka - analiza i określenie najważniejszych zmiennych wpływających na zwiększone ryzyko udaru.
 - Stworzenie skutecznego modelu predykcyjnego ryzyka udaru mózgu - opracowanie modelu uczenia maszynowego, który na podstawie danych medycznych i demograficznych przewiduje wystąpienie udaru mózgu.
 
-## Adonotacje - Projekt 6
+## Adnotacje - Projekt 6+7
 
 ### Uruchamianie aplikacji
 
