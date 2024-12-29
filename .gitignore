@@ -165,3 +165,7 @@ cython_debug/
 healthcare-dataset-stroke-data.csv
 catboost_info/
 strokepred_model.pkl
+
+
+airflow2/logs
+*-pyc

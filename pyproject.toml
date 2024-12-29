@@ -7,7 +7,7 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "3.11.10"
+python = "3.11.10 || 3.11.11"
 pandas = "<2.2.0"
 kagglehub = "^0.3.3"
 pycaret = "^3.3.2"
@@ -35,9 +35,11 @@ mkdocs-material = "^9.5.44"
 
 
 [tool.poetry.group.airflow.dependencies]
-apache-airflow = "^2.10.3"
+apache-airflow = "*"
+apache-airflow-providers-docker = "*"
 gspread = "^6.1.4"
 pymsteams = "^0.2.3"
+apache-airflow-providers-microsoft-azure = "^12.0.0"
 
 
 [tool.poetry.group.api.dependencies]
