@@ -56,7 +56,7 @@ W projekcie dążyć będę do spełnienia dwóch następujących celów:
 
 > [!TIP]
 >
-> Aplikacja jest dostępna publicznie pod adresem [`https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net`](https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net/docs)
+> Aplikacja jest dostępna publicznie pod adresem [`https://strokepred24477-cjeneudmcdb7e8dt.polandcentral-01.azurewebsites.net/docs`](https://strokepred24477-cjeneudmcdb7e8dt.polandcentral-01.azurewebsites.net/docs)
 
 > [!NOTE]
 >
@@ -81,12 +81,12 @@ docker compose up --build
 
 http://127.0.0.1:5000/docs
 
-*lub https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net/docs*
+*lub https://strokepred24477-cjeneudmcdb7e8dt.polandcentral-01.azurewebsites.net/docs*
 
 #### shell
 
 ```sh
 # export PROJECT_URL='http://127.0.0.1:8000'
-export PROJECT_URL='https://strokepred-afafh4hheychdqeb.polandcentral-01.azurewebsites.net'
+export PROJECT_URL='https://strokepred24477-cjeneudmcdb7e8dt.polandcentral-01.azurewebsites.net'
 curl ${PROJECT_URL}'/sample?count=3' | curl -X POST -H 'Content-Type: application/json' --data-binary @- ${PROJECT_URL}'/predict' | jq
 ```
