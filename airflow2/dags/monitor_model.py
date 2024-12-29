@@ -21,6 +21,9 @@ import pymsteams
 def monitor_model():
     @task()
     def download_evaluation_data():
+        """
+        Poniższy kod pobiera dane z arkusza Google Sheets, który wcześniej został utworzony podczas przetwarzania/dzielenia danych.
+        """
         gc = gspread.service_account()
         spreadsheet = gc.open(os.getenv("STROKEPRED_SHEET_URL"))
         wks_evaluation = spreadsheet.worksheet("tune")
@@ -29,17 +32,17 @@ def monitor_model():
 
     @task()
     def load_trained_model():
-        model = load_model("strokepred_model")
+        model = load_model("strokepred_model") # Załadowanie modelu z pliku, który został zapisany podczas trenowania modelu
         return model
 
     @task()
     def evaluate_model(model, evaluation_data):
-        predictions = model.predict(evaluation_data)
+        predictions = model.predict(evaluation_data) # Predict zwraca dataframe poszerzony o kolumnę 'prediction_label' oraz 'prediction_score'
 
         # calculate accuracy
         accuracy = (
             predictions["stroke"] == predictions["prediction_label"]
-        ).count() / len(evaluation_data)
+        ).count() / len(evaluation_data) # Obliczenie dokładności modelu (ile stroke (target) jest równe prediction_label (prediction))
 
         return accuracy
 
